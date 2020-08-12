@@ -30,3 +30,5 @@ Dev-Postgres Database
   * Docs: https://hexdocs.pm/phoenix
   * Forum: https://elixirforum.com/c/phoenix-forum
   * Source: https://github.com/phoenixframework/phoenix
+
+To run in prod: PORT=4001 MIX_ENV=prod mix phx.server

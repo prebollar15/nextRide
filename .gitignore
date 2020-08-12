@@ -33,10 +33,9 @@ npm-debug.log
 # this depending on your deployment strategy.
 /priv/static/
 
-/*/*.secret.exs
+
 
 #environmental variables
 .env
 
 #testing config
-/*/test.exs
