@@ -1,0 +1,37 @@
+<h3>Vehicle Listings</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Vehicle</th>
+      
+      <th>Price</th>
+      <th>City</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for vehicle <- @vehicles do %>
+    <tr>
+      <td>
+        <%= link Enum.join([vehicle.year, " ", vehicle.make, " ", vehicle.model," ", vehicle.trim]), to: Routes.vehicle_path(@conn, :show, vehicle)%>
+      </td>
+      <td><%= "#{"$"} #{vehicle.price}" %></td>
+      <td><%= vehicle.city %></td>
+      
+      <td>
+        <%= if @conn.assigns[:user] do %>
+          <%= if @conn.assigns.user.id == vehicle.user_id do%>
+            <span><%= link "Edit", class: "btn-large waves-effect waves-light orange",to: Routes.vehicle_path(@conn, :edit, vehicle) %></span>
+            <span><%= link "Delete", class: "btn-large waves-effect waves-light red",to: Routes.vehicle_path(@conn, :delete, vehicle), method: :delete, data: [confirm: "Are you sure?"] %></span>
+          <%end%>
+        <%end%>
+      </td>
+      
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "Post New Vehicle", class: "btn-large waves-effect waves-light green", to: Routes.vehicle_path(@conn, :new) %></span>

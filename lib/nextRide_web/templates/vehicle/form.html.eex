@@ -1,0 +1,51 @@
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, something went wrong! Please check the errors below.</p>
+    </div>
+  <% end %>
+
+
+  <%= number_input f, :year %>
+  <%= error_tag f, :year %>
+  <%= label f, :year %>
+
+  
+  <%= text_input f, :make %>
+  <%= error_tag f, :make %>
+  <%= label f, :make %>
+
+  
+  <%= text_input f, :model %>
+  <%= error_tag f, :model %>
+  <%= label f, :model %>
+
+  
+  <%= text_input f, :trim %>
+  <%= error_tag f, :trim %>
+  <%= label f, :trim %>
+
+  
+  <%= number_input f, :price %>
+  <%= error_tag f, :price %>
+  <%= label f, :price %>
+
+  
+  <%= text_input f, :city %>
+  <%= error_tag f, :city %>
+  <%= label f, :city %>
+
+  
+  <%= number_input f, :zip %>
+  <%= error_tag f, :zip %>
+  <%= label f, :zip %>
+
+  
+  <%= text_input f, :description %>
+  <%= error_tag f, :description %>
+  <%= label f, :description %>
+
+  <div>
+    <%= submit "Save", class: "btn-large waves-effect waves-light green"%>
+  </div>
+<% end %>

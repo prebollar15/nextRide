@@ -1,0 +1,5 @@
+<h3>Edit Vehicle</h3>
+
+<%= render "form.html", Map.put(assigns, :action, Routes.vehicle_path(@conn, :update, @vehicle)) %>
+
+<span><%= link "Back to Listings", class: "btn-large waves-effect waves-light blue", to: Routes.vehicle_path(@conn, :index) %></span>
